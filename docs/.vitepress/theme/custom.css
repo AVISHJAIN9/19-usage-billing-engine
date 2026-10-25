@@ -1,0 +1,37 @@
+:root {
+  --vp-c-brand: #6366f1;
+  --vp-c-brand-light: #818cf8;
+  --vp-c-brand-dark: #4f46e5;
+}
+
+.dark {
+  --vp-c-bg: #000000 !important;
+  --vp-c-bg-alt: #000000 !important;
+  --vp-c-bg-elv: #0a0a0a !important;
+  --vp-c-bg-soft: #0a0a0a !important;
+  --vp-sidebar-bg-color: #000000 !important;
+  --vp-c-border: #222222 !important;
+  --vp-c-divider: #222222 !important;
+  --vp-nav-bg-color: #000000 !important;
+}
+
+html.dark body {
+  background-color: #000000 !important;
+  color: #f1f5f9;
+}
+
+/* Enhanced table contrast */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th, td {
+  border: 1px solid #222222;
+  padding: 10px 14px;
+}
+
+th {
+  background-color: #0a0a0a;
+}

@@ -1,0 +1,51 @@
+id,feature,layers,priority,area,rank
+BIL-005,Payment database,BE+DB,P0,Area Database & Distributed Infrastructure,r37
+BIL-009,Indexes for usage queries,BE+DB,P0,Area Database & Distributed Infrastructure,r35
+BIL-010,Partitioning,BE+DB,P0,Area Database & Distributed Infrastructure,r36
+BIL-018,Subscription lifecycle,BE,P1,Area Accounts, Plans & Entitlements,r20
+BIL-020,Plan upgrades,BE,P1,Area Accounts, Plans & Entitlements,r1
+BIL-021,Plan downgrades,BE,P1,Area Accounts, Plans & Entitlements,r2
+BIL-022,Plan cancellation,BE,P1,Area Accounts, Plans & Entitlements,r21
+BIL-023,Plan pause/resume,BE,P1,Area Accounts, Plans & Entitlements,r22
+BIL-024,Trial periods,BE,P1,Area Accounts, Plans & Entitlements,r23
+BIL-029,Timestamp validation,BE,P0,Area Usage Metering Core,r29
+BIL-037,Project attribution,BE,P0,Area Usage Metering Core,r31
+BIL-038,Usage units,BE,P0,Area Usage Metering Core,r30
+BIL-040,Plan versioning,BE+DB,P0,Area Billing & Rating,r28
+BIL-045,Volume pricing,BE+DB,P0,Area Billing & Rating,r24
+BIL-048,Minimum charges,BE+DB,P0,Area Billing & Rating,r26
+BIL-049,Maximum charges,BE+DB,P0,Area Billing & Rating,r27
+BIL-051,Overage pricing,BE+DB,P0,Area Billing & Rating,r25
+BIL-052,Hourly aggregation,BE+DB,P1,Area Aggregation & Periods,r32
+BIL-053,Daily aggregation,BE+DB,P1,Area Aggregation & Periods,r33
+BIL-063,Real-time usage counters,BE+DB,P1,Area Aggregation & Periods,r34
+BIL-065,Immutable usage ledger,BE+DB,P0,Area Ledger & Financial Integrity,r4
+BIL-066,Charge ledger,BE+DB,P0,Area Ledger & Financial Integrity,r3
+BIL-072,Transaction IDs,BE+DB,P0,Area Ledger & Financial Integrity,r5
+BIL-076,Adjustment journal,BE+DB,P0,Area Ledger & Financial Integrity,r6
+BIL-078,Draft invoices,BE+DB,P0,Area Invoicing,r11
+BIL-082,Usage line-item generation,BE+DB,P0,Area Invoicing,r9
+BIL-083,Subscription line items,BE+DB,P0,Area Invoicing,r10
+BIL-084,Discount line items,BE+DB,P0,Area Invoicing,r8
+BIL-086,Tax line items,BE+DB,P0,Area Invoicing,r7
+BIL-088,Currency handling,BE+DB,P0,Area Invoicing,r12
+BIL-092,Payment authorization,BE+DB,P0,Area Payments & Collections,r16
+BIL-093,Payment capture,BE+DB,P0,Area Payments & Collections,r17
+BIL-097,Payment retries,BE+DB,P0,Area Payments & Collections,r19
+BIL-098,Failed-payment handling,BE+DB,P0,Area Payments & Collections,r18
+BIL-099,Dunning workflow,BE+DB,P0,Area Payments & Collections,r13
+BIL-100,Grace period,BE+DB,P0,Area Payments & Collections,r14
+BIL-101,Automatic collection,BE+DB,P0,Area Payments & Collections,r15
+BIL-104,Meter API,BE,P0,Area Backend APIs & Services,r45
+BIL-106,Rating API,BE,P0,Area Backend APIs & Services,r42
+BIL-107,Usage query API,BE,P0,Area Backend APIs & Services,r43
+BIL-109,Payment API,BE,P0,Area Backend APIs & Services,r46
+BIL-110,Subscription API,BE,P0,Area Backend APIs & Services,r44
+BIL-115,Revenue metrics,BE,P1,Area Reporting, Analytics & Observability,r47
+BIL-117,MRR metrics,BE,P1,Area Reporting, Analytics & Observability,r48
+BIL-127,API authentication,BE,P1,Area Security, Compliance & AI,r40
+BIL-128,RBAC,BE,P1,Area Security, Compliance & AI,r39
+BIL-129,Tenant isolation,BE,P1,Area Security, Compliance & AI,r38
+BIL-136,Audit logging,BE,P1,Area Security, Compliance & AI,r41
+BIL-139,Billing dashboard,FE+BE,P1,Area Frontend & Billing Console,r50
+BIL-145,Invoice list,FE+BE,P1,Area Frontend & Billing Console,r49

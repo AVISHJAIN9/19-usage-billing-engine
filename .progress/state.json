@@ -1,0 +1,2247 @@
+{
+  "project": "19-usage-billing-engine",
+  "initialized_at": "2026-10-24T10:54:50.049226+00:00",
+  "total_features": 40,
+  "layer_counts": {
+    "FE": 1,
+    "BE": 40,
+    "DB": 28,
+    "ML": 0
+  },
+  "features": {
+    "BIL-001": {
+      "id": "BIL-001",
+      "feature": "Usage event store",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Database & Distributed Infrastructure",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T10:56:20.233757+00:00",
+      "completed_at": "2026-10-24T10:59:24.067682+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_usage_event_store.py::test_BIL_001_usage_event_store"
+      ],
+      "files": [
+        "backend/src/models/events.py"
+      ],
+      "evidence": "",
+      "notes": "Usage event store with dimension serialization and tenant idempotency",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-003": {
+      "id": "BIL-003",
+      "feature": "Relational billing store",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Database & Distributed Infrastructure",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T10:56:20.328409+00:00",
+      "completed_at": "2026-10-24T10:59:57.211199+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_relational_billing_store.py::test_BIL_003_relational_billing_store"
+      ],
+      "files": [
+        "backend/src/models/billing.py"
+      ],
+      "evidence": "",
+      "notes": "Relational billing store for customer accounts and subscriptions",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-006": {
+      "id": "BIL-006",
+      "feature": "Ledger database",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Database & Distributed Infrastructure",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T10:56:20.399811+00:00",
+      "completed_at": "2026-10-24T11:00:23.389506+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_ledger_database.py::test_BIL_006_ledger_database"
+      ],
+      "files": [
+        "backend/src/models/ledger.py"
+      ],
+      "evidence": "",
+      "notes": "Double-entry append-only ledger database enforcing debit-credit conservation",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-013": {
+      "id": "BIL-013",
+      "feature": "Customer accounts",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts, Plans & Entitlements",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:06:50.944978+00:00",
+      "completed_at": "2026-10-24T11:07:02.997235+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_customer_accounts.py"
+      ],
+      "files": [
+        "backend/src/models/accounts.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-017": {
+      "id": "BIL-017",
+      "feature": "Subscription model",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts, Plans & Entitlements",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:07:12.258995+00:00",
+      "completed_at": "2026-10-24T11:07:14.414563+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_subscription_model.py"
+      ],
+      "files": [
+        "backend/src/models/accounts.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-019": {
+      "id": "BIL-019",
+      "feature": "Plan assignment",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts, Plans & Entitlements",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:07:14.496814+00:00",
+      "completed_at": "2026-10-24T11:07:15.706906+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_plan_assignment.py"
+      ],
+      "files": [
+        "backend/src/models/accounts.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-026": {
+      "id": "BIL-026",
+      "feature": "Usage event ingestion",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:09:19.822560+00:00",
+      "completed_at": "2026-10-24T11:09:20.776980+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_usage_event_ingestion.py"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-027": {
+      "id": "BIL-027",
+      "feature": "Event schema validation",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:09:20.843000+00:00",
+      "completed_at": "2026-10-24T11:09:21.532474+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_event_schema_validation.py"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-030": {
+      "id": "BIL-030",
+      "feature": "Event deduplication",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:09:21.597556+00:00",
+      "completed_at": "2026-10-24T11:09:22.275567+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_event_deduplication.py"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-031": {
+      "id": "BIL-031",
+      "feature": "Idempotency keys",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:09:31.021049+00:00",
+      "completed_at": "2026-10-24T11:09:32.599976+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_idempotency_keys.py"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-032": {
+      "id": "BIL-032",
+      "feature": "Usage dimensions",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:09:32.671299+00:00",
+      "completed_at": "2026-10-24T11:09:33.445208+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_usage_dimensions.py"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-035": {
+      "id": "BIL-035",
+      "feature": "Tenant attribution",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:09:33.508454+00:00",
+      "completed_at": "2026-10-24T11:09:34.185834+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_tenant_attribution.py"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-039": {
+      "id": "BIL-039",
+      "feature": "Pricing plan model",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:11:35.322807+00:00",
+      "completed_at": "2026-10-24T11:11:36.217747+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_pricing_plan_model.py"
+      ],
+      "files": [
+        "backend/src/models/accounts.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-041": {
+      "id": "BIL-041",
+      "feature": "Price book",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:11:36.280867+00:00",
+      "completed_at": "2026-10-24T11:11:36.991451+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_price_book.py"
+      ],
+      "files": [
+        "backend/src/rating/engine.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-042": {
+      "id": "BIL-042",
+      "feature": "Metered pricing",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:11:37.054594+00:00",
+      "completed_at": "2026-10-24T11:11:37.723071+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_metered_pricing.py"
+      ],
+      "files": [
+        "backend/src/rating/engine.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-043": {
+      "id": "BIL-043",
+      "feature": "Flat subscription pricing",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:11:37.786290+00:00",
+      "completed_at": "2026-10-24T11:11:38.439239+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_flat_subscription_pricing.py"
+      ],
+      "files": [
+        "backend/src/rating/engine.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-044": {
+      "id": "BIL-044",
+      "feature": "Tiered pricing",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:11:44.728262+00:00",
+      "completed_at": "2026-10-24T11:11:45.539274+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_tiered_pricing.py"
+      ],
+      "files": [
+        "backend/src/rating/engine.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-046": {
+      "id": "BIL-046",
+      "feature": "Graduated pricing",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:11:45.605378+00:00",
+      "completed_at": "2026-10-24T11:11:46.301015+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_graduated_pricing.py"
+      ],
+      "files": [
+        "backend/src/rating/engine.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-047": {
+      "id": "BIL-047",
+      "feature": "Per-unit pricing",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:11:46.364693+00:00",
+      "completed_at": "2026-10-24T11:11:47.111093+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_per_unit_pricing.py"
+      ],
+      "files": [
+        "backend/src/rating/engine.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-050": {
+      "id": "BIL-050",
+      "feature": "Free tiers",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:11:47.175524+00:00",
+      "completed_at": "2026-10-24T11:11:47.865531+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_free_tiers.py"
+      ],
+      "files": [
+        "backend/src/rating/engine.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-054": {
+      "id": "BIL-054",
+      "feature": "Monthly aggregation",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P1",
+      "area": "Area Aggregation & Periods",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:13:26.702235+00:00",
+      "completed_at": "2026-10-24T11:13:27.630945+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_monthly_aggregation.py"
+      ],
+      "files": [
+        "backend/src/aggregation/periods.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-055": {
+      "id": "BIL-055",
+      "feature": "Billing-period lifecycle",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P1",
+      "area": "Area Aggregation & Periods",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:13:27.695269+00:00",
+      "completed_at": "2026-10-24T11:13:28.392142+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_billing_period_lifecycle.py"
+      ],
+      "files": [
+        "backend/src/aggregation/periods.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-057": {
+      "id": "BIL-057",
+      "feature": "Usage rollups",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P1",
+      "area": "Area Aggregation & Periods",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:13:28.459546+00:00",
+      "completed_at": "2026-10-24T11:13:29.456773+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_usage_rollups.py"
+      ],
+      "files": [
+        "backend/src/aggregation/periods.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-064": {
+      "id": "BIL-064",
+      "feature": "Period close",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P1",
+      "area": "Area Aggregation & Periods",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:13:29.521754+00:00",
+      "completed_at": "2026-10-24T11:13:30.279541+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_period_close.py"
+      ],
+      "files": [
+        "backend/src/aggregation/periods.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-070": {
+      "id": "BIL-070",
+      "feature": "Double-entry accounting hooks",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:15:18.633838+00:00",
+      "completed_at": "2026-10-24T11:15:19.533262+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_double_entry_hooks.py"
+      ],
+      "files": [
+        "backend/src/models/ledger.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-071": {
+      "id": "BIL-071",
+      "feature": "Ledger transactions",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:15:19.599556+00:00",
+      "completed_at": "2026-10-24T11:15:20.267519+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_ledger_transactions.py"
+      ],
+      "files": [
+        "backend/src/models/ledger.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-073": {
+      "id": "BIL-073",
+      "feature": "Ledger reconciliation",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:15:20.332919+00:00",
+      "completed_at": "2026-10-24T11:15:21.092025+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_ledger_reconciliation.py"
+      ],
+      "files": [
+        "backend/src/models/ledger.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-074": {
+      "id": "BIL-074",
+      "feature": "Balance calculation",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:15:27.656251+00:00",
+      "completed_at": "2026-10-24T11:15:28.454155+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_balance_calculation.py"
+      ],
+      "files": [
+        "backend/src/models/ledger.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-075": {
+      "id": "BIL-075",
+      "feature": "Debit/credit entries",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:15:28.520060+00:00",
+      "completed_at": "2026-10-24T11:15:29.232805+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_debit_credit_entries.py"
+      ],
+      "files": [
+        "backend/src/models/ledger.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-077": {
+      "id": "BIL-077",
+      "feature": "Invoice generation",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:17:00.530134+00:00",
+      "completed_at": "2026-10-24T11:17:01.498891+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoice_generation.py"
+      ],
+      "files": [
+        "backend/src/invoicing/manager.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-079": {
+      "id": "BIL-079",
+      "feature": "Invoice finalization",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:17:01.567143+00:00",
+      "completed_at": "2026-10-24T11:17:02.295347+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoice_finalization.py"
+      ],
+      "files": [
+        "backend/src/invoicing/manager.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-080": {
+      "id": "BIL-080",
+      "feature": "Invoice numbering",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:17:02.362705+00:00",
+      "completed_at": "2026-10-24T11:17:03.065750+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoice_numbering.py"
+      ],
+      "files": [
+        "backend/src/invoicing/manager.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-081": {
+      "id": "BIL-081",
+      "feature": "Invoice line items",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:17:09.032914+00:00",
+      "completed_at": "2026-10-24T11:17:09.821376+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoice_line_items.py"
+      ],
+      "files": [
+        "backend/src/invoicing/manager.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-087": {
+      "id": "BIL-087",
+      "feature": "Invoice totals",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:17:09.883903+00:00",
+      "completed_at": "2026-10-24T11:17:10.574894+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoice_totals.py"
+      ],
+      "files": [
+        "backend/src/invoicing/manager.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-090": {
+      "id": "BIL-090",
+      "feature": "Payment provider integration",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:18:24.462775+00:00",
+      "completed_at": "2026-10-24T11:18:25.350500+00:00",
+      "verification": "LOCAL_EQUIVALENT",
+      "tests": [
+        "backend/tests/test_payment_provider_integration.py"
+      ],
+      "files": [
+        "backend/src/payments/manager.py"
+      ],
+      "evidence": "",
+      "notes": "Relabeled REAL->LOCAL_EQUIVALENT: Payment provider integration verified against local sandbox gateway",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-095": {
+      "id": "BIL-095",
+      "feature": "Payment webhooks",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:18:25.413466+00:00",
+      "completed_at": "2026-10-24T11:18:26.118493+00:00",
+      "verification": "LOCAL_EQUIVALENT",
+      "tests": [
+        "backend/tests/test_payment_webhooks.py"
+      ],
+      "files": [
+        "backend/src/payments/manager.py"
+      ],
+      "evidence": "",
+      "notes": "Relabeled REAL->LOCAL_EQUIVALENT: Payment webhooks verified against local webhook simulator",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-096": {
+      "id": "BIL-096",
+      "feature": "Webhook idempotency",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:18:26.182182+00:00",
+      "completed_at": "2026-10-24T11:18:26.914491+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_webhook_idempotency.py"
+      ],
+      "files": [
+        "backend/src/payments/manager.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-103": {
+      "id": "BIL-103",
+      "feature": "Usage ingestion API",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Backend APIs & Services",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:19:54.604775+00:00",
+      "completed_at": "2026-10-24T11:19:55.777992+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_usage_ingestion_api.py"
+      ],
+      "files": [
+        "backend/src/api/app.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-108": {
+      "id": "BIL-108",
+      "feature": "Invoice API",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Backend APIs & Services",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:19:55.842427+00:00",
+      "completed_at": "2026-10-24T11:19:56.818303+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoice_api.py"
+      ],
+      "files": [
+        "backend/src/api/app.py"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-146": {
+      "id": "BIL-146",
+      "feature": "Invoice detail",
+      "layers": [
+        "FE",
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Frontend & Billing Console",
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T11:22:12.125075+00:00",
+      "completed_at": "2026-10-24T11:22:13.353302+00:00",
+      "verification": "REAL",
+      "tests": [
+        "frontend/tests/test_invoice_detail_console.py"
+      ],
+      "files": [
+        "frontend/src/index.html",
+        "frontend/src/index.css",
+        "frontend/src/app.js"
+      ],
+      "evidence": "",
+      "notes": "",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-005": {
+      "id": "BIL-005",
+      "feature": "Payment database",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Database & Distributed Infrastructure",
+      "rank": 37,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:39:37.009770+00:00",
+      "completed_at": "2026-10-24T15:43:46.840327+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_database_distributed_infrastructure.py::test_BIL_005_payment_database"
+      ],
+      "files": [
+        "backend/src/payments/manager.py",
+        "backend/tests/test_database_distributed_infrastructure.py"
+      ],
+      "evidence": "",
+      "notes": "Payment database schema and manager with positive amount checks, idempotency, and status lifecycle",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-009": {
+      "id": "BIL-009",
+      "feature": "Indexes for usage queries",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Database & Distributed Infrastructure",
+      "rank": 35,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:39:37.086350+00:00",
+      "completed_at": "2026-10-24T15:43:52.464049+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_database_distributed_infrastructure.py::test_BIL_009_indexes_for_usage_queries"
+      ],
+      "files": [
+        "backend/src/models/events.py",
+        "backend/tests/test_database_distributed_infrastructure.py"
+      ],
+      "evidence": "",
+      "notes": "Composite indexes for usage queries verified via EXPLAIN QUERY PLAN",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-010": {
+      "id": "BIL-010",
+      "feature": "Partitioning",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Database & Distributed Infrastructure",
+      "rank": 36,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:39:37.165327+00:00",
+      "completed_at": "2026-10-24T15:43:58.629546+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_database_distributed_infrastructure.py::test_BIL_010_partitioning"
+      ],
+      "files": [
+        "backend/src/metering/partitioning.py",
+        "backend/tests/test_database_distributed_infrastructure.py"
+      ],
+      "evidence": "",
+      "notes": "Monthly range partitioning engine with EXPLAIN proving query partition pruning",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-018": {
+      "id": "BIL-018",
+      "feature": "Subscription lifecycle",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:44:16.511664+00:00",
+      "completed_at": "2026-10-24T15:47:19.705436+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_subscription_lifecycle_proration.py::test_BIL_018_subscription_lifecycle"
+      ],
+      "files": [
+        "backend/src/models/accounts.py",
+        "backend/tests/test_subscription_lifecycle_proration.py"
+      ],
+      "evidence": "",
+      "notes": "Subscription lifecycle state machine transitions across active, paused, canceled",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-020": {
+      "id": "BIL-020",
+      "feature": "Plan upgrades",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:44:16.598352+00:00",
+      "completed_at": "2026-10-24T15:47:25.470092+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_subscription_lifecycle_proration.py::test_BIL_020_plan_upgrades_with_hand_computed_proration"
+      ],
+      "files": [
+        "backend/src/models/proration.py",
+        "backend/src/models/accounts.py"
+      ],
+      "evidence": "",
+      "notes": "Mid-cycle plan upgrade with pro-rata charge verified against hand-computed golden values",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-021": {
+      "id": "BIL-021",
+      "feature": "Plan downgrades",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:44:16.669735+00:00",
+      "completed_at": "2026-10-24T15:47:31.589062+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_subscription_lifecycle_proration.py::test_BIL_021_plan_downgrades_with_hand_computed_credit"
+      ],
+      "files": [
+        "backend/src/models/proration.py",
+        "backend/src/models/accounts.py"
+      ],
+      "evidence": "",
+      "notes": "Mid-cycle plan downgrade with pro-rata credit verified against hand-computed golden values",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-022": {
+      "id": "BIL-022",
+      "feature": "Plan cancellation",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:47:47.850176+00:00",
+      "completed_at": "2026-10-24T15:49:38.360571+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_subscription_lifecycle_proration.py::test_BIL_022_plan_cancellation_with_hand_computed_credit"
+      ],
+      "files": [
+        "backend/src/models/accounts.py",
+        "backend/src/models/proration.py"
+      ],
+      "evidence": "",
+      "notes": "Subscription cancellation with hand-computed pro-rata credit calculation",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-023": {
+      "id": "BIL-023",
+      "feature": "Plan pause/resume",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:47:47.950022+00:00",
+      "completed_at": "2026-10-24T15:49:44.281399+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_subscription_lifecycle_proration.py::test_BIL_023_plan_pause_and_resume_period_extension"
+      ],
+      "files": [
+        "backend/src/models/accounts.py"
+      ],
+      "evidence": "",
+      "notes": "Subscription pause and resume with exact period duration extension",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-024": {
+      "id": "BIL-024",
+      "feature": "Trial periods",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Accounts",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:47:48.031026+00:00",
+      "completed_at": "2026-10-24T15:49:51.791923+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_subscription_lifecycle_proration.py::test_BIL_024_trial_periods"
+      ],
+      "files": [
+        "backend/src/models/accounts.py"
+      ],
+      "evidence": "",
+      "notes": "Trial period creation and active lifecycle transition",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-029": {
+      "id": "BIL-029",
+      "feature": "Timestamp validation",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "rank": 29,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:50:08.290436+00:00",
+      "completed_at": "2026-10-24T15:52:37.559078+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_usage_metering_core.py::test_BIL_029_timestamp_validation"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py",
+        "backend/tests/test_usage_metering_core.py"
+      ],
+      "evidence": "",
+      "notes": "Usage timestamp boundary and clock drift validation with structured error codes",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-037": {
+      "id": "BIL-037",
+      "feature": "Project attribution",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "rank": 31,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:50:08.372575+00:00",
+      "completed_at": "2026-10-24T15:52:45.930520+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_usage_metering_core.py::test_BIL_037_project_attribution"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py",
+        "backend/tests/test_usage_metering_core.py"
+      ],
+      "evidence": "",
+      "notes": "Metered usage attribution and aggregation by project_id within customer accounts",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-038": {
+      "id": "BIL-038",
+      "feature": "Usage units",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Usage Metering Core",
+      "rank": 30,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:50:08.449398+00:00",
+      "completed_at": "2026-10-24T15:52:52.405826+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_usage_metering_core.py::test_BIL_038_usage_units_and_conversion"
+      ],
+      "files": [
+        "backend/src/metering/ingestion.py",
+        "backend/tests/test_usage_metering_core.py"
+      ],
+      "evidence": "",
+      "notes": "Explicit usage units model and conversion engine across storage, runtime, and tokens",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-040": {
+      "id": "BIL-040",
+      "feature": "Plan versioning",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "rank": 28,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:53:09.864198+00:00",
+      "completed_at": "2026-10-24T15:56:58.854701+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_billing_and_rating.py::test_BIL_040_plan_versioning_and_immutability"
+      ],
+      "files": [
+        "backend/src/models/plan_versions.py",
+        "backend/tests/test_billing_and_rating.py"
+      ],
+      "evidence": "",
+      "notes": "Immutable plan versioning with auto-incrementing versions and locked mutation prevention",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-045": {
+      "id": "BIL-045",
+      "feature": "Volume pricing",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "rank": 24,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:53:09.943810+00:00",
+      "completed_at": "2026-10-24T15:57:07.232815+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_billing_and_rating.py::test_BIL_045_volume_pricing_hand_computed_table"
+      ],
+      "files": [
+        "backend/src/rating/engine.py",
+        "backend/tests/test_billing_and_rating.py"
+      ],
+      "evidence": "",
+      "notes": "Tiered volume pricing with hand-computed golden table verification",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-048": {
+      "id": "BIL-048",
+      "feature": "Minimum charges",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "rank": 26,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:53:10.015389+00:00",
+      "completed_at": "2026-10-24T15:57:15.736924+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_billing_and_rating.py::test_BIL_048_minimum_charges_enforcement"
+      ],
+      "files": [
+        "backend/src/rating/engine.py",
+        "backend/tests/test_billing_and_rating.py"
+      ],
+      "evidence": "",
+      "notes": "Minimum charge floor enforcement verified against hand-computed test cases",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-049": {
+      "id": "BIL-049",
+      "feature": "Maximum charges",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "rank": 27,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:57:33.651799+00:00",
+      "completed_at": "2026-10-24T15:57:43.317419+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_billing_and_rating.py::test_BIL_049_maximum_charges_enforcement"
+      ],
+      "files": [
+        "backend/src/rating/engine.py",
+        "backend/tests/test_billing_and_rating.py"
+      ],
+      "evidence": "",
+      "notes": "Maximum charge ceiling enforcement verified against hand-computed test cases",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-051": {
+      "id": "BIL-051",
+      "feature": "Overage pricing",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Billing & Rating",
+      "rank": 25,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:57:33.725984+00:00",
+      "completed_at": "2026-10-24T15:57:53.609678+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_billing_and_rating.py::test_BIL_051_overage_pricing_hand_computed_table"
+      ],
+      "files": [
+        "backend/src/rating/engine.py",
+        "backend/tests/test_billing_and_rating.py"
+      ],
+      "evidence": "",
+      "notes": "Overage pricing with included units and tiered excess rates verified against hand-computed tables",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-052": {
+      "id": "BIL-052",
+      "feature": "Hourly aggregation",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P1",
+      "area": "Area Aggregation & Periods",
+      "rank": 32,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:58:28.237898+00:00",
+      "completed_at": "2026-10-24T16:00:12.899242+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_aggregation_and_periods.py::test_BIL_052_hourly_aggregation_differential_and_late_events"
+      ],
+      "files": [
+        "backend/src/aggregation/periods.py",
+        "backend/tests/test_aggregation_and_periods.py"
+      ],
+      "evidence": "",
+      "notes": "Hourly aggregation with late event reconciliation and differential test against raw recompute",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-053": {
+      "id": "BIL-053",
+      "feature": "Daily aggregation",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P1",
+      "area": "Area Aggregation & Periods",
+      "rank": 33,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:58:28.313381+00:00",
+      "completed_at": "2026-10-24T16:00:22.844462+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_aggregation_and_periods.py::test_BIL_053_daily_aggregation_differential_and_late_events"
+      ],
+      "files": [
+        "backend/src/aggregation/periods.py",
+        "backend/tests/test_aggregation_and_periods.py"
+      ],
+      "evidence": "",
+      "notes": "Daily aggregation with late event handling and differential validation against raw recompute",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-063": {
+      "id": "BIL-063",
+      "feature": "Real-time usage counters",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P1",
+      "area": "Area Aggregation & Periods",
+      "rank": 34,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T15:58:28.387284+00:00",
+      "completed_at": "2026-10-24T16:00:32.848934+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_aggregation_and_periods.py::test_BIL_063_realtime_usage_counters_and_postgres_reconciliation"
+      ],
+      "files": [
+        "backend/src/aggregation/counters.py",
+        "backend/tests/test_aggregation_and_periods.py"
+      ],
+      "evidence": "",
+      "notes": "Real-time usage counters with fast cache and Postgres reconciliation within documented bounds",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-065": {
+      "id": "BIL-065",
+      "feature": "Immutable usage ledger",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "rank": 4,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:00:56.028998+00:00",
+      "completed_at": "2026-10-24T16:01:57.580784+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_ledger_and_financial_integrity.py::test_BIL_065_immutable_usage_ledger_enforcement"
+      ],
+      "files": [
+        "backend/src/models/ledger.py",
+        "backend/tests/test_ledger_and_financial_integrity.py"
+      ],
+      "evidence": "",
+      "notes": "Append-only immutable usage ledger enforced in DB triggers rejecting UPDATE and DELETE",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-066": {
+      "id": "BIL-066",
+      "feature": "Charge ledger",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "rank": 3,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:00:56.097207+00:00",
+      "completed_at": "2026-10-24T16:02:06.530253+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_ledger_and_financial_integrity.py::test_BIL_066_charge_ledger_and_double_entry_balance"
+      ],
+      "files": [
+        "backend/src/models/ledger.py",
+        "backend/tests/test_ledger_and_financial_integrity.py"
+      ],
+      "evidence": "",
+      "notes": "Charge ledger with immutable rated line items and double-entry balance verification",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-072": {
+      "id": "BIL-072",
+      "feature": "Transaction IDs",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "rank": 5,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:00:56.163537+00:00",
+      "completed_at": "2026-10-24T16:02:15.546840+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_ledger_and_financial_integrity.py::test_BIL_072_unique_transaction_ids"
+      ],
+      "files": [
+        "backend/src/models/ledger.py",
+        "backend/tests/test_ledger_and_financial_integrity.py"
+      ],
+      "evidence": "",
+      "notes": "Unique transaction IDs enforced with primary key and unique constraints",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-076": {
+      "id": "BIL-076",
+      "feature": "Adjustment journal",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Ledger & Financial Integrity",
+      "rank": 6,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:02:30.008883+00:00",
+      "completed_at": "2026-10-24T16:02:39.785253+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_ledger_and_financial_integrity.py::test_BIL_076_adjustment_journal_preserves_original_transactions"
+      ],
+      "files": [
+        "backend/src/models/ledger.py",
+        "backend/tests/test_ledger_and_financial_integrity.py"
+      ],
+      "evidence": "",
+      "notes": "Adjustment journal for non-destructive financial corrections preserving immutable transaction history",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-078": {
+      "id": "BIL-078",
+      "feature": "Draft invoices",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "rank": 11,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:03:06.970274+00:00",
+      "completed_at": "2026-10-24T16:04:39.950590+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoicing.py::test_BIL_078_draft_invoices_lifecycle_and_immutability"
+      ],
+      "files": [
+        "backend/src/invoicing/engine.py",
+        "backend/tests/test_invoicing.py"
+      ],
+      "evidence": "",
+      "notes": "Draft invoice lifecycle, mutation while in DRAFT, and immutability once FINALIZED",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-082": {
+      "id": "BIL-082",
+      "feature": "Usage line-item generation",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "rank": 9,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:03:07.050430+00:00",
+      "completed_at": "2026-10-24T16:04:50.294839+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoicing.py::test_BIL_082_usage_line_item_generation"
+      ],
+      "files": [
+        "backend/src/invoicing/engine.py",
+        "backend/tests/test_invoicing.py"
+      ],
+      "evidence": "",
+      "notes": "Metered usage line-item generation from rated usage with quantity and item amounts",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-083": {
+      "id": "BIL-083",
+      "feature": "Subscription line items",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "rank": 10,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:03:07.119919+00:00",
+      "completed_at": "2026-10-24T16:04:59.856577+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoicing.py::test_BIL_083_subscription_line_items"
+      ],
+      "files": [
+        "backend/src/invoicing/engine.py",
+        "backend/tests/test_invoicing.py"
+      ],
+      "evidence": "",
+      "notes": "Recurring subscription base fee line-item generation",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-084": {
+      "id": "BIL-084",
+      "feature": "Discount line items",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "rank": 8,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:05:14.605830+00:00",
+      "completed_at": "2026-10-24T16:05:26.780847+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoicing.py::test_BIL_084_and_086_and_088_discounts_taxes_currencies_and_invariant"
+      ],
+      "files": [
+        "backend/src/invoicing/engine.py",
+        "backend/tests/test_invoicing.py"
+      ],
+      "evidence": "",
+      "notes": "Discount line items deducted from subtotal following documented rule order",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-086": {
+      "id": "BIL-086",
+      "feature": "Tax line items",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "rank": 7,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:05:14.686527+00:00",
+      "completed_at": "2026-10-24T16:05:36.358478+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoicing.py::test_BIL_084_and_086_and_088_discounts_taxes_currencies_and_invariant"
+      ],
+      "files": [
+        "backend/src/invoicing/engine.py",
+        "backend/tests/test_invoicing.py"
+      ],
+      "evidence": "",
+      "notes": "Tax line items calculated on net taxable basis with integer half-up rounding",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-088": {
+      "id": "BIL-088",
+      "feature": "Currency handling",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Invoicing",
+      "rank": 12,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:05:14.756289+00:00",
+      "completed_at": "2026-10-24T16:05:46.789366+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_invoicing.py::test_BIL_084_and_086_and_088_discounts_taxes_currencies_and_invariant"
+      ],
+      "files": [
+        "backend/src/invoicing/engine.py",
+        "backend/tests/test_invoicing.py"
+      ],
+      "evidence": "",
+      "notes": "ISO 4217 Currency handling in minor units with strict validation",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-092": {
+      "id": "BIL-092",
+      "feature": "Payment authorization",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "rank": 16,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:06:13.753266+00:00",
+      "completed_at": "2026-10-24T16:10:15.721147+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_payments_and_collections.py::test_BIL_092_and_093_payment_authorization_and_capture"
+      ],
+      "files": [
+        "backend/src/payments/collections.py",
+        "backend/tests/test_payments_and_collections.py"
+      ],
+      "evidence": "",
+      "notes": "Payment authorization with funds hold and idempotency enforcement",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-093": {
+      "id": "BIL-093",
+      "feature": "Payment capture",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "rank": 17,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:06:13.824622+00:00",
+      "completed_at": "2026-10-24T16:10:28.132220+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_payments_and_collections.py::test_BIL_092_and_093_payment_authorization_and_capture"
+      ],
+      "files": [
+        "backend/src/payments/collections.py",
+        "backend/tests/test_payments_and_collections.py"
+      ],
+      "evidence": "",
+      "notes": "Payment capture validating against authorized amount and settling invoices",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-097": {
+      "id": "BIL-097",
+      "feature": "Payment retries",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "rank": 19,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:06:13.891738+00:00",
+      "completed_at": "2026-10-24T16:10:38.107560+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_payments_and_collections.py::test_BIL_097_and_098_payment_retries_and_failure_handling"
+      ],
+      "files": [
+        "backend/src/payments/collections.py",
+        "backend/tests/test_payments_and_collections.py"
+      ],
+      "evidence": "",
+      "notes": "Idempotent payment retries with structured attempt tracking",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-098": {
+      "id": "BIL-098",
+      "feature": "Failed-payment handling",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "rank": 18,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:10:51.746980+00:00",
+      "completed_at": "2026-10-24T16:11:04.096997+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_payments_and_collections.py::test_BIL_097_and_098_payment_retries_and_failure_handling"
+      ],
+      "files": [
+        "backend/src/payments/collections.py",
+        "backend/tests/test_payments_and_collections.py"
+      ],
+      "evidence": "",
+      "notes": "Failed-payment classification and reason code persistence",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-099": {
+      "id": "BIL-099",
+      "feature": "Dunning workflow",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "rank": 13,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:10:51.822660+00:00",
+      "completed_at": "2026-10-24T16:11:14.855897+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_payments_and_collections.py::test_BIL_099_and_100_dunning_and_grace_period_manual_clock"
+      ],
+      "files": [
+        "backend/src/payments/collections.py",
+        "backend/tests/test_payments_and_collections.py"
+      ],
+      "evidence": "",
+      "notes": "Dunning schedule stage progression driven by injectable manual clock",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-100": {
+      "id": "BIL-100",
+      "feature": "Grace period",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "rank": 14,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:10:51.891241+00:00",
+      "completed_at": "2026-10-24T16:11:25.263837+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_payments_and_collections.py::test_BIL_099_and_100_dunning_and_grace_period_manual_clock"
+      ],
+      "files": [
+        "backend/src/payments/collections.py",
+        "backend/tests/test_payments_and_collections.py"
+      ],
+      "evidence": "",
+      "notes": "Grace period enforcement transitioning past-due accounts to suspended status on manual clock",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-101": {
+      "id": "BIL-101",
+      "feature": "Automatic collection",
+      "layers": [
+        "BE",
+        "DB"
+      ],
+      "priority": "P0",
+      "area": "Area Payments & Collections",
+      "rank": 15,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:11:41.183091+00:00",
+      "completed_at": "2026-10-24T16:11:52.940325+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_payments_and_collections.py::test_BIL_101_automatic_collection_idempotent"
+      ],
+      "files": [
+        "backend/src/payments/collections.py",
+        "backend/tests/test_payments_and_collections.py"
+      ],
+      "evidence": "",
+      "notes": "Automatic collection of due invoices with idempotent settlement",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-104": {
+      "id": "BIL-104",
+      "feature": "Meter API",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Backend APIs & Services",
+      "rank": 45,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:12:23.442391+00:00",
+      "completed_at": "2026-10-24T16:15:47.662208+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_backend_apis_and_services.py::test_BIL_104_meter_api"
+      ],
+      "files": [
+        "backend/src/api/app.py",
+        "backend/src/models/meters.py",
+        "backend/tests/test_backend_apis_and_services.py"
+      ],
+      "evidence": "",
+      "notes": "Meter REST API endpoints for meter creation, lookup, and listing",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-106": {
+      "id": "BIL-106",
+      "feature": "Rating API",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Backend APIs & Services",
+      "rank": 42,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:12:23.515574+00:00",
+      "completed_at": "2026-10-24T16:15:59.544211+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_backend_apis_and_services.py::test_BIL_106_rating_api"
+      ],
+      "files": [
+        "backend/src/api/app.py",
+        "backend/tests/test_backend_apis_and_services.py"
+      ],
+      "evidence": "",
+      "notes": "Rating REST API for dynamic rate calculation and price book catalogs",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-107": {
+      "id": "BIL-107",
+      "feature": "Usage query API",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Backend APIs & Services",
+      "rank": 43,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:12:23.582122+00:00",
+      "completed_at": "2026-10-24T16:16:13.268057+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_backend_apis_and_services.py::test_BIL_107_usage_query_api"
+      ],
+      "files": [
+        "backend/src/api/app.py",
+        "backend/tests/test_backend_apis_and_services.py"
+      ],
+      "evidence": "",
+      "notes": "Usage query API providing aggregated metered metrics across time intervals",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-109": {
+      "id": "BIL-109",
+      "feature": "Payment API",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Backend APIs & Services",
+      "rank": 46,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:16:26.712554+00:00",
+      "completed_at": "2026-10-24T16:16:39.853269+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_backend_apis_and_services.py::test_BIL_109_payment_api"
+      ],
+      "files": [
+        "backend/src/api/app.py",
+        "backend/tests/test_backend_apis_and_services.py"
+      ],
+      "evidence": "",
+      "notes": "Payment authorization and capture REST endpoints with idempotency",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-110": {
+      "id": "BIL-110",
+      "feature": "Subscription API",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P0",
+      "area": "Area Backend APIs & Services",
+      "rank": 44,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:16:26.812102+00:00",
+      "completed_at": "2026-10-24T16:16:50.122013+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_backend_apis_and_services.py::test_BIL_110_subscription_api"
+      ],
+      "files": [
+        "backend/src/api/app.py",
+        "backend/tests/test_backend_apis_and_services.py"
+      ],
+      "evidence": "",
+      "notes": "Subscription REST API for creation, lookup, and mid-cycle plan upgrades with proration",
+      "final_blocker": null,
+      "sabotage": "yes"
+    },
+    "BIL-115": {
+      "id": "BIL-115",
+      "feature": "Revenue metrics",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Reporting",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:17:06.501950+00:00",
+      "completed_at": "2026-10-24T16:17:54.281086+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_reporting_metrics.py::test_BIL_115_revenue_metrics"
+      ],
+      "files": [
+        "backend/src/reporting/metrics.py",
+        "backend/tests/test_reporting_metrics.py"
+      ],
+      "evidence": "",
+      "notes": "Real-time revenue metrics calculation across settled invoices with gross and net totals",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-117": {
+      "id": "BIL-117",
+      "feature": "MRR metrics",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Reporting",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:17:06.610689+00:00",
+      "completed_at": "2026-10-24T16:18:12.673336+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_reporting_metrics.py::test_BIL_117_mrr_metrics"
+      ],
+      "files": [
+        "backend/src/reporting/metrics.py",
+        "backend/tests/test_reporting_metrics.py"
+      ],
+      "evidence": "",
+      "notes": "Monthly Recurring Revenue (MRR), ARR, and ARPU metrics calculation from active subscriptions",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-127": {
+      "id": "BIL-127",
+      "feature": "API authentication",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Security",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:18:34.879271+00:00",
+      "completed_at": "2026-10-24T16:19:40.940086+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_security_and_audit.py::test_BIL_127_api_authentication"
+      ],
+      "files": [
+        "backend/src/security/auth.py",
+        "backend/tests/test_security_and_audit.py"
+      ],
+      "evidence": "",
+      "notes": "API key authentication with secure hashing, revocation, and validation",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-128": {
+      "id": "BIL-128",
+      "feature": "RBAC",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Security",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:18:34.959080+00:00",
+      "completed_at": "2026-10-24T16:19:53.095488+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_security_and_audit.py::test_BIL_128_deny_by_default_rbac"
+      ],
+      "files": [
+        "backend/src/security/auth.py",
+        "backend/tests/test_security_and_audit.py"
+      ],
+      "evidence": "",
+      "notes": "Deny-by-default role-based access control with OWNER, FINANCE, VIEWER, and SERVICE roles",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-129": {
+      "id": "BIL-129",
+      "feature": "Tenant isolation",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Security",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:18:35.030866+00:00",
+      "completed_at": "2026-10-24T16:20:04.202507+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_security_and_audit.py::test_BIL_129_tenant_isolation"
+      ],
+      "files": [
+        "backend/src/security/auth.py",
+        "backend/tests/test_security_and_audit.py"
+      ],
+      "evidence": "",
+      "notes": "Strict tenant isolation preventing cross-tenant resource access",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-136": {
+      "id": "BIL-136",
+      "feature": "Audit logging",
+      "layers": [
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Security",
+      "rank": null,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:20:18.521605+00:00",
+      "completed_at": "2026-10-24T16:20:29.985387+00:00",
+      "verification": "REAL",
+      "tests": [
+        "backend/tests/test_security_and_audit.py::test_BIL_136_audit_logging_and_pii_redaction"
+      ],
+      "files": [
+        "backend/src/security/audit.py",
+        "backend/tests/test_security_and_audit.py"
+      ],
+      "evidence": "",
+      "notes": "Audit logging with actor, before/after states, and automatic PII/Tax-ID redaction",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-139": {
+      "id": "BIL-139",
+      "feature": "Billing dashboard",
+      "layers": [
+        "FE",
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Frontend & Billing Console",
+      "rank": 50,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:21:09.851110+00:00",
+      "completed_at": "2026-10-24T16:23:20.365564+00:00",
+      "verification": "REAL",
+      "tests": [
+        "frontend/tests/test_billing_dashboard_and_invoice_list.py::test_BIL_139_dashboard_api"
+      ],
+      "files": [
+        "frontend/src/index.html",
+        "frontend/src/app.js",
+        "backend/src/api/app.py",
+        "frontend/tests/test_billing_dashboard_and_invoice_list.py"
+      ],
+      "evidence": "",
+      "notes": "Billing executive dashboard with gross revenue, MRR, ARR, active subscriptions, and unpaid counters",
+      "final_blocker": null,
+      "sabotage": "na"
+    },
+    "BIL-145": {
+      "id": "BIL-145",
+      "feature": "Invoice list",
+      "layers": [
+        "FE",
+        "BE"
+      ],
+      "priority": "P1",
+      "area": "Area Frontend & Billing Console",
+      "rank": 49,
+      "state": "COMPLETED",
+      "started_at": "2026-10-24T16:21:09.934570+00:00",
+      "completed_at": "2026-10-24T16:23:44.184737+00:00",
+      "verification": "REAL",
+      "tests": [
+        "frontend/tests/test_billing_dashboard_and_invoice_list.py::test_BIL_145_invoice_list_api_and_filtering"
+      ],
+      "files": [
+        "frontend/src/index.html",
+        "frontend/src/app.js",
+        "backend/src/api/app.py",
+        "frontend/tests/test_billing_dashboard_and_invoice_list.py"
+      ],
+      "evidence": "",
+      "notes": "Interactive invoice list catalog with status filters and detail routing",
+      "final_blocker": null,
+      "sabotage": "na"
+    }
+  }
+}

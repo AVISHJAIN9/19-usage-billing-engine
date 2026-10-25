@@ -1,0 +1,26 @@
+name: Project 19 CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: |
+          pip install pytest pytest-asyncio sqlalchemy aiosqlite httpx pydantic fastapi
+      - name: Run Audit
+        run: |
+          python3 ../../tools/audit_fakes.py --project .
+      - name: Run Tests
+        run: |
+          make test

@@ -1,0 +1,44 @@
+PROJECT 19 — Usage & Billing Engine (BIL-)
+Folder: 19-usage-billing-engine
+Layer breakdown: 40 features · FE 1 · BE 40 · DB 28 · ML 0
+Host ports: API 8190, frontend 5190, postgres 5419, redis 6319.
+
+Mission:
+Usage-based billing engine: ingest metered events, rate them against versioned price books, aggregate into billing periods, generate immutable invoices, collect payments, keep an append-only double-entry ledger that always reconciles.
+
+Architecture:
+ONE PostgreSQL 16 (usage events in a time-partitioned table); Redis for real-time counters; money = integer minor units or Decimal with ONE documented rounding mode, tested; ledger append-only enforced IN THE DATABASE (revoke UPDATE/DELETE from the app role + raising trigger), each ledger transaction has >= 2 entries with debits == credits (deferred constraint trigger), corrections are new reversing entries; invoices DRAFT -> FINALIZED -> (PAID|VOID|UNCOLLECTIBLE), FINALIZED rows immutable at DB level, numbers gapless and sequential per tenant under concurrency (counter row with SELECT ... FOR UPDATE); payments via a provider interface with a real local gateway-sandbox that sends HMAC-signed webhooks with timestamp tolerance, idempotent through an event-ID table; store provider tokens only, NEVER card numbers.
+
+Invariants:
+- Replaying events with the same idempotency keys never changes totals.
+- Late/out-of-order events follow a documented rule (open period accepts them; after close they go to the next period or an adjustment) and are tested.
+- Rollups equal a from-scratch recompute of raw events (differential test).
+- Invoice sum(line items) == subtotal and subtotal - discounts - credits + tax == total with each line traceable to usage rows or subscription terms.
+- Sigma(debits) == Sigma(credits) per transaction and globally.
+- Cached balances equal recomputed balances, reconciliation detects corrupted rows.
+- Pricing expected values (per-unit, flat, tiered, graduated, free tier) are HAND-COMPUTED in test files.
+
+Phase 2 Invariants & Scenarios:
+- Proration for upgrade/downgrade/pause/resume/cancel/trial is computed to the minor unit and verified against HAND-COMPUTED expected values written in the test file (independent of the code);
+- Volume vs graduated vs overage vs min/max charges verified with golden tables computed by hand;
+- Plan versions are immutable once used by a finalized invoice;
+- Hourly/daily rollups equal a from-scratch recompute (differential test) including late events;
+- Real-time Redis counters reconcile to Postgres within a documented bound and Postgres stays the source of truth;
+- Usage ledger is append-only enforced in the DB (revoke UPDATE/DELETE + trigger) and corrections go through the adjustment journal;
+- Every ledger transaction has a unique transaction ID and Sigma(debits) == Sigma(credits);
+- Tax and discount line items follow the documented rule order, totals = subtotal − discounts − credits + tax;
+- Dunning schedule and grace period driven by a manual clock;
+- Payment retries and automatic collection are idempotent;
+- RBAC (owner, finance, viewer, service) deny-by-default;
+- Every mutation writes an audit entry with actor and before/after;
+- Tax IDs/PII never appear in logs (grep test);
+- Partitioning verified with EXPLAIN showing partition pruning.
+
+Scenarios:
+- S19-02: extended with volume/overage/min/max
+- S19-05: hourly/daily + late events
+- S19-06: dunning schedule with grace period and automatic collection on a manual clock
+- S19-07: subscription lifecycle with trials and proration (hand-computed)
+- S19-10: tenant isolation via RLS and PII-absent-from-logs
+- S19-12: measured ingestion throughput and rating latency (only measured numbers)
+

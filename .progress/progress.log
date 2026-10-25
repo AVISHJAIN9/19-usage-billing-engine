@@ -1,0 +1,183 @@
+2026-10-24T10:54:50.052204+00:00 | ALL | NONE -> TODO | Initialized 40 features
+2026-10-24T10:56:20.234659+00:00 | BIL-001 | TODO -> WORKING | Started feature
+2026-10-24T10:56:20.328723+00:00 | BIL-003 | TODO -> WORKING | Started feature
+2026-10-24T10:56:20.400048+00:00 | BIL-006 | TODO -> WORKING | Started feature
+2026-10-24T10:59:24.072342+00:00 | BIL-001 | WORKING -> COMPLETED | Completed: Usage event store with dimension serialization and tenant idempotency
+2026-10-24T10:59:57.227023+00:00 | BIL-003 | WORKING -> COMPLETED | Completed: Relational billing store for customer accounts and subscriptions
+2026-10-24T11:00:23.393069+00:00 | BIL-006 | WORKING -> COMPLETED | Completed: Double-entry append-only ledger database enforcing debit-credit conservation
+2026-10-24T11:06:50.946200+00:00 | BIL-013 | TODO -> WORKING | Started feature
+2026-10-24T11:07:03.000914+00:00 | BIL-013 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:07:12.260440+00:00 | BIL-017 | TODO -> WORKING | Started feature
+2026-10-24T11:07:14.417164+00:00 | BIL-017 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:07:14.497036+00:00 | BIL-019 | TODO -> WORKING | Started feature
+2026-10-24T11:07:15.709859+00:00 | BIL-019 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:09:19.822906+00:00 | BIL-026 | TODO -> WORKING | Started feature
+2026-10-24T11:09:20.779375+00:00 | BIL-026 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:09:20.843242+00:00 | BIL-027 | TODO -> WORKING | Started feature
+2026-10-24T11:09:21.535823+00:00 | BIL-027 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:09:21.597807+00:00 | BIL-030 | TODO -> WORKING | Started feature
+2026-10-24T11:09:22.277957+00:00 | BIL-030 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:09:31.021575+00:00 | BIL-031 | TODO -> WORKING | Started feature
+2026-10-24T11:09:32.602664+00:00 | BIL-031 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:09:32.671487+00:00 | BIL-032 | TODO -> WORKING | Started feature
+2026-10-24T11:09:33.447714+00:00 | BIL-032 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:09:33.508663+00:00 | BIL-035 | TODO -> WORKING | Started feature
+2026-10-24T11:09:34.188292+00:00 | BIL-035 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:11:35.323216+00:00 | BIL-039 | TODO -> WORKING | Started feature
+2026-10-24T11:11:36.220409+00:00 | BIL-039 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:11:36.281061+00:00 | BIL-041 | TODO -> WORKING | Started feature
+2026-10-24T11:11:36.994090+00:00 | BIL-041 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:11:37.054803+00:00 | BIL-042 | TODO -> WORKING | Started feature
+2026-10-24T11:11:37.725515+00:00 | BIL-042 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:11:37.786532+00:00 | BIL-043 | TODO -> WORKING | Started feature
+2026-10-24T11:11:38.442286+00:00 | BIL-043 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:11:44.728612+00:00 | BIL-044 | TODO -> WORKING | Started feature
+2026-10-24T11:11:45.542215+00:00 | BIL-044 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:11:45.605619+00:00 | BIL-046 | TODO -> WORKING | Started feature
+2026-10-24T11:11:46.303748+00:00 | BIL-046 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:11:46.364935+00:00 | BIL-047 | TODO -> WORKING | Started feature
+2026-10-24T11:11:47.113711+00:00 | BIL-047 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:11:47.175891+00:00 | BIL-050 | TODO -> WORKING | Started feature
+2026-10-24T11:11:47.868251+00:00 | BIL-050 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:13:26.702491+00:00 | BIL-054 | TODO -> WORKING | Started feature
+2026-10-24T11:13:27.634282+00:00 | BIL-054 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:13:27.695559+00:00 | BIL-055 | TODO -> WORKING | Started feature
+2026-10-24T11:13:28.394960+00:00 | BIL-055 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:13:28.459780+00:00 | BIL-057 | TODO -> WORKING | Started feature
+2026-10-24T11:13:29.459653+00:00 | BIL-057 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:13:29.521966+00:00 | BIL-064 | TODO -> WORKING | Started feature
+2026-10-24T11:13:30.282199+00:00 | BIL-064 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:15:18.634125+00:00 | BIL-070 | TODO -> WORKING | Started feature
+2026-10-24T11:15:19.536331+00:00 | BIL-070 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:15:19.599806+00:00 | BIL-071 | TODO -> WORKING | Started feature
+2026-10-24T11:15:20.270297+00:00 | BIL-071 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:15:20.333171+00:00 | BIL-073 | TODO -> WORKING | Started feature
+2026-10-24T11:15:21.094768+00:00 | BIL-073 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:15:27.656579+00:00 | BIL-074 | TODO -> WORKING | Started feature
+2026-10-24T11:15:28.457643+00:00 | BIL-074 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:15:28.520420+00:00 | BIL-075 | TODO -> WORKING | Started feature
+2026-10-24T11:15:29.235582+00:00 | BIL-075 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:17:00.530421+00:00 | BIL-077 | TODO -> WORKING | Started feature
+2026-10-24T11:17:01.501820+00:00 | BIL-077 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:17:01.567466+00:00 | BIL-079 | TODO -> WORKING | Started feature
+2026-10-24T11:17:02.299091+00:00 | BIL-079 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:17:02.362973+00:00 | BIL-080 | TODO -> WORKING | Started feature
+2026-10-24T11:17:03.068444+00:00 | BIL-080 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:17:09.033358+00:00 | BIL-081 | TODO -> WORKING | Started feature
+2026-10-24T11:17:09.823961+00:00 | BIL-081 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:17:09.884093+00:00 | BIL-087 | TODO -> WORKING | Started feature
+2026-10-24T11:17:10.577747+00:00 | BIL-087 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:18:24.463085+00:00 | BIL-090 | TODO -> WORKING | Started feature
+2026-10-24T11:18:25.353146+00:00 | BIL-090 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:18:25.413727+00:00 | BIL-095 | TODO -> WORKING | Started feature
+2026-10-24T11:18:26.121107+00:00 | BIL-095 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:18:26.182402+00:00 | BIL-096 | TODO -> WORKING | Started feature
+2026-10-24T11:18:26.917548+00:00 | BIL-096 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:19:54.605245+00:00 | BIL-103 | TODO -> WORKING | Started feature
+2026-10-24T11:19:55.780791+00:00 | BIL-103 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:19:55.842634+00:00 | BIL-108 | TODO -> WORKING | Started feature
+2026-10-24T11:19:56.821371+00:00 | BIL-108 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:22:12.125404+00:00 | BIL-146 | TODO -> WORKING | Started feature
+2026-10-24T11:22:13.356300+00:00 | BIL-146 | WORKING -> COMPLETED | Completed: 
+2026-10-24T12:20:12.784622+00:00 | BIL-090 | VERIF:REAL -> VERIF:LOCAL_EQUIVALENT | Relabeled: Payment provider integration verified against local sandbox gateway
+2026-10-24T12:20:12.848408+00:00 | BIL-095 | VERIF:REAL -> VERIF:LOCAL_EQUIVALENT | Relabeled: Payment webhooks verified against local webhook simulator
+2026-10-24T15:39:37.010054+00:00 | BIL-005 | TODO -> WORKING | Started feature
+2026-10-24T15:39:37.086608+00:00 | BIL-009 | TODO -> WORKING | Started feature
+2026-10-24T15:39:37.165585+00:00 | BIL-010 | TODO -> WORKING | Started feature
+2026-10-24T15:43:46.845819+00:00 | BIL-005 | WORKING -> COMPLETED | Completed: Payment database schema and manager with positive amount checks, idempotency, and status lifecycle
+2026-10-24T15:43:52.468934+00:00 | BIL-009 | WORKING -> COMPLETED | Completed: Composite indexes for usage queries verified via EXPLAIN QUERY PLAN
+2026-10-24T15:43:58.634768+00:00 | BIL-010 | WORKING -> COMPLETED | Completed: Monthly range partitioning engine with EXPLAIN proving query partition pruning
+2026-10-24T15:44:16.512084+00:00 | BIL-018 | TODO -> WORKING | Started feature
+2026-10-24T15:44:16.598622+00:00 | BIL-020 | TODO -> WORKING | Started feature
+2026-10-24T15:44:16.669958+00:00 | BIL-021 | TODO -> WORKING | Started feature
+2026-10-24T15:47:19.712962+00:00 | BIL-018 | WORKING -> COMPLETED | Completed: Subscription lifecycle state machine transitions across active, paused, canceled
+2026-10-24T15:47:25.475082+00:00 | BIL-020 | WORKING -> COMPLETED | Completed: Mid-cycle plan upgrade with pro-rata charge verified against hand-computed golden values
+2026-10-24T15:47:31.594055+00:00 | BIL-021 | WORKING -> COMPLETED | Completed: Mid-cycle plan downgrade with pro-rata credit verified against hand-computed golden values
+2026-10-24T15:47:47.850425+00:00 | BIL-022 | TODO -> WORKING | Started feature
+2026-10-24T15:47:47.950731+00:00 | BIL-023 | TODO -> WORKING | Started feature
+2026-10-24T15:47:48.031256+00:00 | BIL-024 | TODO -> WORKING | Started feature
+2026-10-24T15:49:38.367740+00:00 | BIL-022 | WORKING -> COMPLETED | Completed: Subscription cancellation with hand-computed pro-rata credit calculation
+2026-10-24T15:49:44.286742+00:00 | BIL-023 | WORKING -> COMPLETED | Completed: Subscription pause and resume with exact period duration extension
+2026-10-24T15:49:51.797481+00:00 | BIL-024 | WORKING -> COMPLETED | Completed: Trial period creation and active lifecycle transition
+2026-10-24T15:50:08.290828+00:00 | BIL-029 | TODO -> WORKING | Started feature
+2026-10-24T15:50:08.372813+00:00 | BIL-037 | TODO -> WORKING | Started feature
+2026-10-24T15:50:08.449625+00:00 | BIL-038 | TODO -> WORKING | Started feature
+2026-10-24T15:52:37.565066+00:00 | BIL-029 | WORKING -> COMPLETED | Completed: Usage timestamp boundary and clock drift validation with structured error codes
+2026-10-24T15:52:45.935705+00:00 | BIL-037 | WORKING -> COMPLETED | Completed: Metered usage attribution and aggregation by project_id within customer accounts
+2026-10-24T15:52:52.411108+00:00 | BIL-038 | WORKING -> COMPLETED | Completed: Explicit usage units model and conversion engine across storage, runtime, and tokens
+2026-10-24T15:53:09.864446+00:00 | BIL-040 | TODO -> WORKING | Started feature
+2026-10-24T15:53:09.944059+00:00 | BIL-045 | TODO -> WORKING | Started feature
+2026-10-24T15:53:10.015615+00:00 | BIL-048 | TODO -> WORKING | Started feature
+2026-10-24T15:56:58.863396+00:00 | BIL-040 | WORKING -> COMPLETED | Completed: Immutable plan versioning with auto-incrementing versions and locked mutation prevention
+2026-10-24T15:57:07.238104+00:00 | BIL-045 | WORKING -> COMPLETED | Completed: Tiered volume pricing with hand-computed golden table verification
+2026-10-24T15:57:15.741710+00:00 | BIL-048 | WORKING -> COMPLETED | Completed: Minimum charge floor enforcement verified against hand-computed test cases
+2026-10-24T15:57:33.652304+00:00 | BIL-049 | TODO -> WORKING | Started feature
+2026-10-24T15:57:33.726228+00:00 | BIL-051 | TODO -> WORKING | Started feature
+2026-10-24T15:57:43.322542+00:00 | BIL-049 | WORKING -> COMPLETED | Completed: Maximum charge ceiling enforcement verified against hand-computed test cases
+2026-10-24T15:57:53.614482+00:00 | BIL-051 | WORKING -> COMPLETED | Completed: Overage pricing with included units and tiered excess rates verified against hand-computed tables
+2026-10-24T15:58:28.238223+00:00 | BIL-052 | TODO -> WORKING | Started feature
+2026-10-24T15:58:28.313676+00:00 | BIL-053 | TODO -> WORKING | Started feature
+2026-10-24T15:58:28.387582+00:00 | BIL-063 | TODO -> WORKING | Started feature
+2026-10-24T16:00:12.904628+00:00 | BIL-052 | WORKING -> COMPLETED | Completed: Hourly aggregation with late event reconciliation and differential test against raw recompute
+2026-10-24T16:00:22.849986+00:00 | BIL-053 | WORKING -> COMPLETED | Completed: Daily aggregation with late event handling and differential validation against raw recompute
+2026-10-24T16:00:32.854254+00:00 | BIL-063 | WORKING -> COMPLETED | Completed: Real-time usage counters with fast cache and Postgres reconciliation within documented bounds
+2026-10-24T16:00:56.029323+00:00 | BIL-065 | TODO -> WORKING | Started feature
+2026-10-24T16:00:56.097431+00:00 | BIL-066 | TODO -> WORKING | Started feature
+2026-10-24T16:00:56.163744+00:00 | BIL-072 | TODO -> WORKING | Started feature
+2026-10-24T16:01:57.588987+00:00 | BIL-065 | WORKING -> COMPLETED | Completed: Append-only immutable usage ledger enforced in DB triggers rejecting UPDATE and DELETE
+2026-10-24T16:02:06.536432+00:00 | BIL-066 | WORKING -> COMPLETED | Completed: Charge ledger with immutable rated line items and double-entry balance verification
+2026-10-24T16:02:15.551868+00:00 | BIL-072 | WORKING -> COMPLETED | Completed: Unique transaction IDs enforced with primary key and unique constraints
+2026-10-24T16:02:30.009181+00:00 | BIL-076 | TODO -> WORKING | Started feature
+2026-10-24T16:02:39.790468+00:00 | BIL-076 | WORKING -> COMPLETED | Completed: Adjustment journal for non-destructive financial corrections preserving immutable transaction history
+2026-10-24T16:03:06.970552+00:00 | BIL-078 | TODO -> WORKING | Started feature
+2026-10-24T16:03:07.050680+00:00 | BIL-082 | TODO -> WORKING | Started feature
+2026-10-24T16:03:07.120158+00:00 | BIL-083 | TODO -> WORKING | Started feature
+2026-10-24T16:04:39.958505+00:00 | BIL-078 | WORKING -> COMPLETED | Completed: Draft invoice lifecycle, mutation while in DRAFT, and immutability once FINALIZED
+2026-10-24T16:04:50.300743+00:00 | BIL-082 | WORKING -> COMPLETED | Completed: Metered usage line-item generation from rated usage with quantity and item amounts
+2026-10-24T16:04:59.862820+00:00 | BIL-083 | WORKING -> COMPLETED | Completed: Recurring subscription base fee line-item generation
+2026-10-24T16:05:14.606680+00:00 | BIL-084 | TODO -> WORKING | Started feature
+2026-10-24T16:05:14.686864+00:00 | BIL-086 | TODO -> WORKING | Started feature
+2026-10-24T16:05:14.756581+00:00 | BIL-088 | TODO -> WORKING | Started feature
+2026-10-24T16:05:26.787220+00:00 | BIL-084 | WORKING -> COMPLETED | Completed: Discount line items deducted from subtotal following documented rule order
+2026-10-24T16:05:36.363661+00:00 | BIL-086 | WORKING -> COMPLETED | Completed: Tax line items calculated on net taxable basis with integer half-up rounding
+2026-10-24T16:05:46.795276+00:00 | BIL-088 | WORKING -> COMPLETED | Completed: ISO 4217 Currency handling in minor units with strict validation
+2026-10-24T16:06:13.753518+00:00 | BIL-092 | TODO -> WORKING | Started feature
+2026-10-24T16:06:13.824841+00:00 | BIL-093 | TODO -> WORKING | Started feature
+2026-10-24T16:06:13.892009+00:00 | BIL-097 | TODO -> WORKING | Started feature
+2026-10-24T16:10:15.731287+00:00 | BIL-092 | WORKING -> COMPLETED | Completed: Payment authorization with funds hold and idempotency enforcement
+2026-10-24T16:10:28.138053+00:00 | BIL-093 | WORKING -> COMPLETED | Completed: Payment capture validating against authorized amount and settling invoices
+2026-10-24T16:10:38.113345+00:00 | BIL-097 | WORKING -> COMPLETED | Completed: Idempotent payment retries with structured attempt tracking
+2026-10-24T16:10:51.747223+00:00 | BIL-098 | TODO -> WORKING | Started feature
+2026-10-24T16:10:51.822936+00:00 | BIL-099 | TODO -> WORKING | Started feature
+2026-10-24T16:10:51.891498+00:00 | BIL-100 | TODO -> WORKING | Started feature
+2026-10-24T16:11:04.102824+00:00 | BIL-098 | WORKING -> COMPLETED | Completed: Failed-payment classification and reason code persistence
+2026-10-24T16:11:14.861802+00:00 | BIL-099 | WORKING -> COMPLETED | Completed: Dunning schedule stage progression driven by injectable manual clock
+2026-10-24T16:11:25.269584+00:00 | BIL-100 | WORKING -> COMPLETED | Completed: Grace period enforcement transitioning past-due accounts to suspended status on manual clock
+2026-10-24T16:11:41.183352+00:00 | BIL-101 | TODO -> WORKING | Started feature
+2026-10-24T16:11:52.946401+00:00 | BIL-101 | WORKING -> COMPLETED | Completed: Automatic collection of due invoices with idempotent settlement
+2026-10-24T16:12:23.442648+00:00 | BIL-104 | TODO -> WORKING | Started feature
+2026-10-24T16:12:23.515809+00:00 | BIL-106 | TODO -> WORKING | Started feature
+2026-10-24T16:12:23.582338+00:00 | BIL-107 | TODO -> WORKING | Started feature
+2026-10-24T16:15:47.670387+00:00 | BIL-104 | WORKING -> COMPLETED | Completed: Meter REST API endpoints for meter creation, lookup, and listing
+2026-10-24T16:15:59.550145+00:00 | BIL-106 | WORKING -> COMPLETED | Completed: Rating REST API for dynamic rate calculation and price book catalogs
+2026-10-24T16:16:13.274136+00:00 | BIL-107 | WORKING -> COMPLETED | Completed: Usage query API providing aggregated metered metrics across time intervals
+2026-10-24T16:16:26.712789+00:00 | BIL-109 | TODO -> WORKING | Started feature
+2026-10-24T16:16:26.812399+00:00 | BIL-110 | TODO -> WORKING | Started feature
+2026-10-24T16:16:39.858932+00:00 | BIL-109 | WORKING -> COMPLETED | Completed: Payment authorization and capture REST endpoints with idempotency
+2026-10-24T16:16:50.127686+00:00 | BIL-110 | WORKING -> COMPLETED | Completed: Subscription REST API for creation, lookup, and mid-cycle plan upgrades with proration
+2026-10-24T16:17:06.503429+00:00 | BIL-115 | TODO -> WORKING | Started feature
+2026-10-24T16:17:06.610922+00:00 | BIL-117 | TODO -> WORKING | Started feature
+2026-10-24T16:17:54.287374+00:00 | BIL-115 | WORKING -> COMPLETED | Completed: Real-time revenue metrics calculation across settled invoices with gross and net totals
+2026-10-24T16:18:12.687664+00:00 | BIL-117 | WORKING -> COMPLETED | Completed: Monthly Recurring Revenue (MRR), ARR, and ARPU metrics calculation from active subscriptions
+2026-10-24T16:18:34.879519+00:00 | BIL-127 | TODO -> WORKING | Started feature
+2026-10-24T16:18:34.959534+00:00 | BIL-128 | TODO -> WORKING | Started feature
+2026-10-24T16:18:35.031083+00:00 | BIL-129 | TODO -> WORKING | Started feature
+2026-10-24T16:19:40.946826+00:00 | BIL-127 | WORKING -> COMPLETED | Completed: API key authentication with secure hashing, revocation, and validation
+2026-10-24T16:19:53.101520+00:00 | BIL-128 | WORKING -> COMPLETED | Completed: Deny-by-default role-based access control with OWNER, FINANCE, VIEWER, and SERVICE roles
+2026-10-24T16:20:04.208704+00:00 | BIL-129 | WORKING -> COMPLETED | Completed: Strict tenant isolation preventing cross-tenant resource access
+2026-10-24T16:20:18.522204+00:00 | BIL-136 | TODO -> WORKING | Started feature
+2026-10-24T16:20:29.991161+00:00 | BIL-136 | WORKING -> COMPLETED | Completed: Audit logging with actor, before/after states, and automatic PII/Tax-ID redaction
+2026-10-24T16:21:09.851639+00:00 | BIL-139 | TODO -> WORKING | Started feature
+2026-10-24T16:21:09.936427+00:00 | BIL-145 | TODO -> WORKING | Started feature
+2026-10-24T16:23:20.371769+00:00 | BIL-139 | WORKING -> COMPLETED | Completed: Billing executive dashboard with gross revenue, MRR, ARR, active subscriptions, and unpaid counters
+2026-10-24T16:23:44.191881+00:00 | BIL-145 | WORKING -> COMPLETED | Completed: Interactive invoice list catalog with status filters and detail routing

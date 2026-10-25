@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: billing-postgres
+    environment:
+      POSTGRES_USER: billing
+      POSTGRES_PASSWORD: billing_password
+      POSTGRES_DB: billing_db
+    ports:
+      - "5419:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U billing -d billing_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: billing-redis
+    ports:
+      - "6319:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: billing-api
+    ports:
+      - "8190:8190"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://billing:billing_password@postgres:5432/billing_db
+      REDIS_URL: redis://redis:6379/0
+      PORT: 8190
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  frontend:
+    image: nginx:alpine
+    container_name: billing-frontend
+    ports:
+      - "5190:80"
+    volumes:
+      - ../frontend/src:/usr/share/nginx/html:ro
