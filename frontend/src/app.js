@@ -6,7 +6,9 @@
  * - Interactive Invoice Detail console with live line items and ledger preview
  */
 
-const API_BASE = "http://localhost:8190";
+const API_BASE = window.location.hostname.includes("github.io")
+  ? "https://aj-usage-billing-engine.onrender.com"
+  : "http://localhost:8190";
 
 let state = {
   tenantId: "tenant-saas",
