@@ -24,6 +24,64 @@ from invoicing.manager import InvoiceManager, InvoiceSchema, InvoiceLineItemSche
 async def lifespan(app: FastAPI):
     # Initialize database tables on startup
     await init_db()
+    try:
+        from datetime import timedelta
+        from invoicing.manager import InvoiceRecord, InvoiceStatus
+        async with AsyncSessionLocal() as session:
+            c_res = await session.execute(select(func.count(InvoiceRecord.id)))
+            count = c_res.scalar() or 0
+            if count == 0:
+                now = datetime.now(timezone.utc)
+                invoices = [
+                    InvoiceRecord(
+                        id="inv-2026-demo-01",
+                        tenant_id="tenant-saas",
+                        customer_id="cust-enterprise-42",
+                        invoice_number="INV-2026-0001",
+                        status=InvoiceStatus.PAID.value,
+                        currency="USD",
+                        subtotal_cents=450000,
+                        discount_cents=0,
+                        credit_cents=0,
+                        tax_cents=35000,
+                        total_cents=485000,
+                        due_date=now + timedelta(days=30),
+                        finalized_at=now - timedelta(days=5)
+                    ),
+                    InvoiceRecord(
+                        id="inv-2026-demo-02",
+                        tenant_id="tenant-saas",
+                        customer_id="cust-startup-99",
+                        invoice_number="INV-2026-0002",
+                        status=InvoiceStatus.FINALIZED.value,
+                        currency="USD",
+                        subtotal_cents=120000,
+                        discount_cents=0,
+                        credit_cents=0,
+                        tax_cents=9000,
+                        total_cents=129000,
+                        due_date=now + timedelta(days=14),
+                        finalized_at=now - timedelta(days=1)
+                    ),
+                    InvoiceRecord(
+                        id="inv-2026-demo-03",
+                        tenant_id="tenant-saas",
+                        customer_id="cust-fintech-10",
+                        invoice_number="INV-2026-0003",
+                        status=InvoiceStatus.DRAFT.value,
+                        currency="USD",
+                        subtotal_cents=340000,
+                        discount_cents=0,
+                        credit_cents=0,
+                        tax_cents=0,
+                        total_cents=340000,
+                        due_date=now + timedelta(days=45)
+                    )
+                ]
+                session.add_all(invoices)
+                await session.commit()
+    except Exception as e:
+        print(f"Warning: Demo billing seed skipped: {e}")
     yield
 
 
