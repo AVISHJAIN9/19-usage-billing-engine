@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usage & Billing Engine — Billing Dashboard & Console</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">
+          <h2>LedgerFlow</h2>
+          <span>Usage & Billing Engine</span>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="#dashboard" class="nav-item active" id="nav-dashboard">
+          <span class="icon">📊</span> Billing Dashboard
+        </a>
+        <a href="#invoices" class="nav-item" id="nav-invoices">
+          <span class="icon">📄</span> Invoices List
+        </a>
+        <a href="#invoice-detail" class="nav-item" id="nav-detail">
+          <span class="icon">🔍</span> Invoice Detail
+        </a>
+      </nav>
+      <div class="system-status">
+        <div class="pulse-indicator"></div>
+        <span>Engine Active (Port 8190)</span>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-header">
+        <div class="header-breadcrumb">
+          <span>Billing Console</span> / <span class="current" id="breadcrumb-title">Overview</span>
+        </div>
+        <div class="header-actions">
+          <button id="btn-refresh" class="btn btn-secondary">Refresh</button>
+          <button id="btn-finalize" class="btn btn-primary" style="display: none;">Finalize Invoice</button>
+        </div>
+      </header>
+
+      <!-- SECTION 1: Billing Dashboard (BIL-139) -->
+      <section id="section-dashboard" class="view-section">
+        <h2 class="section-title">Executive Billing Dashboard</h2>
+        <div class="dashboard-grid">
+          <div class="kpi-card glass-panel">
+            <span class="kpi-label">Gross Revenue</span>
+            <div id="kpi-gross-revenue" class="kpi-value font-mono">$0.00</div>
+            <span class="kpi-sub">Total invoiced & settled</span>
+          </div>
+          <div class="kpi-card glass-panel">
+            <span class="kpi-label">Monthly Recurring Revenue (MRR)</span>
+            <div id="kpi-mrr" class="kpi-value font-mono highlight-green">$0.00</div>
+            <span class="kpi-sub" id="kpi-arr-sub">ARR: $0.00</span>
+          </div>
+          <div class="kpi-card glass-panel">
+            <span class="kpi-label">Active Subscriptions</span>
+            <div id="kpi-active-subs" class="kpi-value font-mono">0</div>
+            <span class="kpi-sub">Active recurring contracts</span>
+          </div>
+          <div class="kpi-card glass-panel">
+            <span class="kpi-label">Unpaid / Due</span>
+            <div id="kpi-unpaid-invoices" class="kpi-value font-mono highlight-warn">$0.00</div>
+            <span class="kpi-sub" id="kpi-unpaid-count-sub">0 pending collection</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: Invoices List (BIL-145) -->
+      <section id="section-invoice-list" class="view-section" style="margin-top: 24px;">
+        <div class="section-header-row">
+          <h2 class="section-title">Invoices Catalog</h2>
+          <div class="filter-controls">
+            <label for="filter-status">Status:</label>
+            <select id="filter-status" class="form-input" style="max-width: 140px;">
+              <option value="">All Statuses</option>
+              <option value="DRAFT">DRAFT</option>
+              <option value="FINALIZED">FINALIZED</option>
+              <option value="PAID">PAID</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-wrapper glass-panel">
+          <table class="data-table" id="invoice-list-table">
+            <thead>
+              <tr>
+                <th>Invoice #</th>
+                <th>Customer ID</th>
+                <th>Status</th>
+                <th>Total Due</th>
+                <th>Due Date</th>
+                <th class="text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="invoice-list-tbody">
+              <!-- Dynamically injected -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Invoice Detail Console (BIL-146) -->
+      <section id="section-invoice-detail" class="invoice-container view-section" style="margin-top: 24px;">
+        <!-- Invoice Header Card -->
+        <div class="invoice-card glass-panel" id="invoice-header-card">
+          <div class="invoice-meta-row">
+            <div class="meta-col">
+              <span class="label">Invoice Number</span>
+              <h1 id="inv-number" class="invoice-id-display">INV-2026-0001</h1>
+              <span id="inv-status-badge" class="badge badge-draft">DRAFT</span>
+            </div>
+            <div class="meta-col align-right">
+              <span class="label">Total Amount Due</span>
+              <div id="inv-total-display" class="total-highlight">$0.00</div>
+              <span id="inv-currency-label" class="currency-tag">USD (Cents-Accurate)</span>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">Customer ID</span>
+              <span id="inv-customer-id" class="meta-val font-mono">cust-enterprise-42</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Tenant ID</span>
+              <span id="inv-tenant-id" class="meta-val font-mono">tenant-saas</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Issue Date</span>
+              <span id="inv-issue-date" class="meta-val">2026-10-24</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Due Date</span>
+              <span id="inv-due-date" class="meta-val">2026-11-23</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line Items Section -->
+        <div class="invoice-card glass-panel" id="line-items-card">
+          <div class="card-header">
+            <h3>Usage & Subscription Line Items</h3>
+            <span id="item-count-badge" class="pill-badge">0 Items</span>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="line-items-table">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Event Type</th>
+                  <th>Quantity</th>
+                  <th>Unit Rate</th>
+                  <th class="text-right">Amount</th>
+                </tr>
+              </thead>
+              <tbody id="line-items-tbody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Add Line Item Quick Form -->
+          <form id="add-item-form" class="quick-add-form">
+            <input type="text" id="input-desc" placeholder="Description (e.g. Inference Tokens)" required class="form-input">
+            <input type="text" id="input-type" placeholder="Event Type" value="api.calls" class="form-input">
+            <input type="number" id="input-qty" placeholder="Quantity" min="1" value="100" class="form-input" style="max-width: 120px;">
+            <input type="number" id="input-rate" placeholder="Rate (cents)" min="0" value="5" class="form-input" style="max-width: 130px;">
+            <button type="submit" id="btn-add-item" class="btn btn-primary">+ Add Item</button>
+          </form>
+        </div>
+
+        <!-- Financial Summary Totals Card -->
+        <div class="totals-layout">
+          <div class="ledger-preview glass-panel">
+            <h4>Double-Entry Ledger Impact</h4>
+            <div class="ledger-rows">
+              <div class="ledger-row">
+                <span class="tag-dr">DEBIT</span>
+                <span>Accounts Receivable (AR:<span id="ledger-cust-tag">cust-enterprise-42</span>)</span>
+                <span class="amount-dr" id="ledger-dr-amount">$0.00</span>
+              </div>
+              <div class="ledger-row">
+                <span class="tag-cr">CREDIT</span>
+                <span>Earned Revenue (REV:usage)</span>
+                <span class="amount-cr" id="ledger-cr-amount">$0.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="totals-card glass-panel" id="invoice-totals-card">
+            <div class="summary-line">
+              <span>Subtotal</span>
+              <span id="val-subtotal" class="font-mono">$0.00</span>
+            </div>
+            <div class="summary-line">
+              <span>Discounts & Credits</span>
+              <span id="val-discount" class="font-mono discount-text">-$0.00</span>
+            </div>
+            <div class="summary-line">
+              <span>Taxes</span>
+              <span id="val-tax" class="font-mono">$0.00</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-line grand-total">
+              <span>Total Due</span>
+              <span id="val-total" class="font-mono">$0.00</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
